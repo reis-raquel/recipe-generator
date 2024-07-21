@@ -6,32 +6,31 @@
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <title>AI poem generator</title>
+    <title>recipe generator</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Game of Thrones poem generator</h1>
+        <h1> International Recipe Generator</h1>
+        <h2> 🦐🌶️🍖🥗</h2>
       </header>
       <main>
-        <form id="poem-generator-form">
-          <input
-            type="text"
-            placeholder="Enter a topic ex: love, dragon, Stark.. "
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-            id="user-instructions"
-          />
-          <input type="submit" class="submit-button" />
-      
-          
-        </form>
-
-      </div>
-        <div class="poem" id="poem"></div> 
-      
+        <div class="form-container">
+          <form id="recipe-generator-form">
+            <input
+              type="text"
+              placeholder="Enter a country"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <small class="hint"> i.e. Portugal, France, Italy </small>
+        </div>
+        <div class="recipe hidden" id="recipe"></div>
       </main>
       <footer>
         This page was coded by

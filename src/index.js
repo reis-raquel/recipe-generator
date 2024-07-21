@@ -1,6 +1,5 @@
-function displayPoem(response) {
-  console.log("poem generated");
-  new Typewriter("#poem", {
+function displayRecipe(response) {
+  new Typewriter("#recipe", {
     strings: response.data.answer,
     autoStart: true,
     delay: 1,
@@ -8,23 +7,24 @@ function displayPoem(response) {
   });
 }
 
-function generatePoem(event) {
+function generateRecipe(event) {
   event.preventDefault();
 
   let instructionsInput = document.querySelector("#user-instructions");
 
   let apiKey = "dt3bbe9160a34o69bead9ceff8624028 ";
-  let prompt = `User instructions: Generate a poem about ${instructionsInput.value}`;
+  let prompt = `User instructions: Generate a recipe using ${instructionsInput.value}`;
   let context =
-    "you are a biggest fan ever of the Game of Thrones series,  who loves to write short poems themed Game of Thrones. Your mission is to generate a FOUR LINES poem in basic HTML.Separate each line with a <br>.  Sign the poem with `SheCodes AI` at the END of the poem, inside a <strong> element. Do not put a tilte on the poem. ";
+    "you are a Top Chef, who loves to cook recipes from all the countries. Your mission is to generate a recipe from diferent countries in basic HTML. The recipe must have a name on top, a list of ingredients separate each line by </br> and prepation instructions, separate each line by </br>. ";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  console.log("generating poem");
-  console.log(`prompt:${prompt}`);
-  console.log(`context: ${context}`);
+  let recipeElement = document.querySelector("#recipe");
+  recipeElement.classList.remove("hidden");
 
-  axios.get(apiUrl).then(displayPoem);
+  recipeElement.innerHTML = `<div class="generating">⏳ Generating a recipe from ${instructionsInput.value}</div>`;
+
+  axios.get(apiUrl).then(displayRecipe);
 }
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
+let recipeFormElement = document.querySelector("#recipe-generator-form");
+recipeFormElement.addEventListener("submit", generateRecipe);
