@@ -1,11 +1,17 @@
 body {
-  background-color: #f2f5e7;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-style: normal;
+  height: 700px;
 }
 
 a {
   color: #885df1;
+}
+
+main {
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -14,10 +20,12 @@ a {
 }
 
 header {
-  margin-bottom: 30px;
+  margin-top: 90px;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 800;
   font-size: 36px;
@@ -32,7 +40,7 @@ h2 {
 
 .form-container {
   padding: 30px;
-  background-color: white;
+
   margin-bottom: 30px;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
@@ -71,6 +79,7 @@ form {
 }
 
 .recipe {
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   background-color: #fff;
   padding: 30px;
@@ -86,5 +95,5 @@ form {
 footer {
   text-align: center;
   font-size: 13px;
-  margin-top: 30px;
+  margin-top: 430px;
 }
